@@ -11,3 +11,4 @@
 ### Possible Extension:
 <p>The user can rate movies.</P>
 <p>The user can write reviews for movies.</P>
+<img width="432" alt="image" src="https://user-images.githubusercontent.com/21125062/201424277-4d6fccde-0a58-49e0-b901-82d1c0464abe.png">
