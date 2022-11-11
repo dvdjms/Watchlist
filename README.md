@@ -12,4 +12,6 @@
 <p>The user can rate movies.</P>
 <p>The user can write reviews for movies.</P>
 
-<img width="452" alt="image" src="https://user-images.githubusercontent.com/21125062/201424827-4b1f8154-7b87-43d3-966c-a3f5599f2c5e.png">
+<img width="452" alt="image" src="https://user-images.githubusercontent.com/21125062/201425289-09edb6a0-6724-4d1a-82d1-a3cde3394978.png">
+
+<img width="452" alt="image" src="https://user-images.githubusercontent.com/21125062/201425382-09e58162-9cc1-463a-87b3-e4885e43356d.png">
