@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS users;
+-- DROP TABLE IF EXISTS watchlist;
 DROP TABLE IF EXISTS movies;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS directors;
 
 
@@ -20,7 +21,15 @@ CREATE TABLE movies (
     director VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL,
     year INT NOT NULL,
+    country VARCHAR(255) NOT NULL,
     rating INT NOT NULL,
-    director_id INT NOT NULL REFERENCES directors(id)
+    watchlist BOOLEAN NOT NULL,
+    director_id INT NOT NULL REFERENCES directors(id) ON DELETE CASCADE
 );
+
+-- CREATE TABLE watchlist (
+--     id SERIAL PRIMARY KEY,
+--     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+--     movie_id INT NOT NULL REFERENCES movies(id) ON DELETE CASCADE
+-- );
 

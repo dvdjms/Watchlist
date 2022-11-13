@@ -9,10 +9,14 @@ import repositories.movie_repository as movie_repository
 from models.director import Director
 import repositories.director_repository as director_repository
 
+from models.watchlist import Watchlist
+import repositories.watchlist_repository as watchlist_repository
+
 
 user_repository.delete_all()
 movie_repository.delete_all()
 director_repository.delete_all()
+# watchlist_repository.delete_all()
 
 
 user_1 = User("John", "Johnson")
@@ -46,21 +50,28 @@ director_6 = Director("Steven Speilberg")
 director_repository.save(director_6)
 
 
-movie_1 = Movie("Paris, Texas", director_4, "Drama", 1984, 10)
+movie_1 = Movie("Paris, Texas", director_4, "Drama", 1984, "Germany", 10, True)
 movie_repository.save(movie_1)
 
-movie_2 = Movie("ET: Extra Terrestrial", director_6, "Science Fiction", 1982, 8)
+movie_2 = Movie("ET: Extra Terrestrial", director_6, "Science Fiction", 1982, "United States", 8, False)
 movie_repository.save(movie_2)
 
-movie_3 = Movie("Back to the Future", director_3, "Science Fiction", 1985, 8)
+movie_3 = Movie("Back to the Future", director_3, "Science Fiction", 1985, "United States", 8, False)
 movie_repository.save(movie_3)
 
-movie_4 = Movie("The Lost Boys", director_5, "Fantasy", 1987, 6)
+movie_4 = Movie("The Lost Boys", director_5, "Fantasy", 1987, "United States", 6, True)
 movie_repository.save(movie_4)
 
-movie_5 = Movie("Romance in the Stone", director_3, "Comedy, Romance", 1984, 7)
+movie_5 = Movie("Romance in the Stone", director_3, "Comedy, Romance", 1984, "United States", 7, True)
 movie_repository.save(movie_5)
 
+# watchlist_1 = Watchlist(user_1, movie_4, director_5)
+# watchlist_repository.save(watchlist_1)
 
+# watchlist_1 = Watchlist(user_1, movie_5, director_3)
+# watchlist_repository.save(watchlist_1)
+
+# watchlist_2 = Watchlist(user_2, movie_5, director_3)
+# watchlist_repository.save(watchlist_2)
 
 pdb.set_trace()

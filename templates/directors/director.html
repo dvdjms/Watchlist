@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-    <header class="header">
+<header class="header">
     
-        <h1 class="header-title">Movies</h1>
+    <h1 class="header-title">Directors</h1>
 
-    </header>
-
+</header>
+    <div>
         {% for movie in movies %}
         <div class="container-movie">
             <section class="container-movie1">
@@ -28,10 +28,16 @@
                     </form>
                 </div>
             </section>
-
         </div>
         {% endfor %}
-    
+    </div>
+
+    <section>
+        <h3>{{ director.name }}</h3>
+        <h4>{{ director.id }}</h4>
+
+    </section>
+
 
 {% endblock %}
 

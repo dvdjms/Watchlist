@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Movies</title>
 </head>
 <body>
     <header>
-        <h1>Movies</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/movies">View Movies</a></li>
-
-            </ul>
-            
-        </nav>
+        <div id="nav_container">
+            <h1 id="nav_bar_header">Watchlist</h1>
+            <nav>
+                <ul>
+                    <li class="nav_bar_list"><a href="/">Home</a></li>
+                    <li class="nav_bar_list"><a href="/directors">Directors</a></li>
+                    <li class="nav_bar_list"><a href="/movies">Movies</a></li>
+                    <li class="nav_bar_list"><a href="/watchlist">Watchlist</a></li>
+                    <li class="nav_bar_list"><a href="/movies/add">Create New</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <div>
         {% block content %}

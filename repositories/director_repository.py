@@ -14,4 +14,25 @@ def delete_all():
     run_sql(sql)
 
 
+def select_all():
+    directors = []
+    sql = "SELECT * FROM directors"
+    results = run_sql(sql)
+    for row in results:
+        director = Director(row['name'], row['id'])
+        directors.append(director)
+    return directors
+
+
+def select(id):
+    director = None
+    sql = "SELECT * FROM directors WHERE id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    if results:
+        result = results[0]
+        director = Director(result['name'], result['id'])
+    return director
+
+
     

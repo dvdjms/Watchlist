@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-    <header class="header">
+<header class="header">
     
-        <h1 class="header-title">Movies</h1>
+    <h1 class="header-title">Watchlist</h1>
 
-    </header>
-
+</header>
+    <div><button>View movies seen</button></div>
+    <div>
         {% for movie in movies %}
         <div class="container-movie">
             <section class="container-movie1">
@@ -28,11 +29,9 @@
                     </form>
                 </div>
             </section>
-
         </div>
         {% endfor %}
-    
-
+    </div>
 {% endblock %}
 
 
