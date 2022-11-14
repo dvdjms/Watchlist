@@ -6,8 +6,8 @@ import repositories.director_repository as director_repository
 # import repositories.user_repository as user_repository
 
 def save(movie):
-    sql = "INSERT INTO movies (title, director, genre, year, country, rating, watchlist, director_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [movie.title, movie.director.name, movie.genre, movie.year, movie.country, movie.rating, movie.watchlist, movie.director.id]
+    sql = "INSERT INTO movies (title, genre, year, country, rating, watchlist, director_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [movie.title, movie.genre, movie.year, movie.country, movie.rating, movie.watchlist, movie.director.id]
     results = run_sql(sql, values)
     id = results[0]['id']
     movie.id = id 
@@ -15,28 +15,25 @@ def save(movie):
 
 def select_all():
     movies = []
-    sql = "SELECT * FROM movies"
+    sql = "SELECT * FROM movies ORDER BY id"
     results = run_sql(sql)
     for row in results:
-        movie = Movie(row['title'], row['director'], row['genre'], row['year'], row['country'], row['rating'], row['watchlist'], row['id'])
+        director = director_repository.select(row['director_id'])
+        movie = Movie(row['title'], row['genre'], row['year'], row['country'], director, row['rating'], row['watchlist'], row['id'])
         movies.append(movie)
     return movies
 
 
 def select_watchlist():
     movies = []
-    sql = "SELECT * FROM movies WHERE watchlist = %s"
+    sql = "SELECT * FROM movies WHERE watchlist = %s ORDER BY id"
     values = [True]
     results = run_sql(sql, values)
     for row in results:
-        movie = Movie(row['title'], row['director'], row['genre'], row['year'], row['country'], row['rating'], row['watchlist'], row['id'])
+        director = director_repository.select(row['director_id'])
+        movie = Movie(row['title'], row['genre'], row['year'], row['country'], director, row['rating'], row['watchlist'], row['id'])
         movies.append(movie)
     return movies
-
-
-def delete_all():
-    sql = "DELETE FROM movies"
-    run_sql(sql)
 
 
 def select(id):
@@ -46,12 +43,34 @@ def select(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        movie = Movie(result['title'], result['director'], result['genre'], result['year'], result['rating'], result['watchlist'], result['id'])
+        director = director_repository.select(result['director_id'])
+        movie = Movie(result['title'], result['genre'], result['year'], result['country'], director, result['rating'], result['watchlist'], result['id'])
     return movie
 
 
+def delete_all():
+    sql = "DELETE FROM movies"
+    run_sql(sql)
+
+
+def delete_id(id):
+    sql = "DELETE FROM movies WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
 
 
 
+def update_watchlist(id):
+    movie = select(id)
 
+    print(movie.title)
+    print(movie.watchlist)
 
+    if movie.watchlist == True:
+        sql = "UPDATE movies SET watchlist = (%s) WHERE id = (%s)"
+        values = [False, id]
+        run_sql(sql, values)
+    else:
+        sql = "UPDATE movies SET watchlist = (%s) WHERE id = (%s)"
+        values = [True, id]
+        run_sql(sql, values)

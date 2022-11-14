@@ -47,11 +47,11 @@ nav > ul > li > a:visited {
 }
 
 .header {
+    margin-top: 10px;
     justify-content: center;
-    background-color: chocolate;
     Height: 60px;
     margin-bottom: 20px;
-    color: white;
+    color: maroon;
     text-align: center;
 }
 
@@ -61,7 +61,7 @@ nav > ul > li > a:visited {
     border-style: solid;
     border-width: 2px;
     color: white;
-    background-color: rgb(236, 221, 221);
+    background-color: rgb(236, 236, 236);
     margin: auto;
     height: 70px;
     width: 50%;
@@ -104,13 +104,15 @@ nav > ul > li > a:visited {
 }
 .movie-child1 > a:hover {
     text-decoration: none;
-    color: blueviolet;
+    color: rgb(255, 79, 79);
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 #movie-child3 {
     width: 15%;
     height: 30px;
     float: left;
+    font-size: 14px;
     padding-top: 12px;
     padding-left: 15px;
 }
@@ -118,6 +120,7 @@ nav > ul > li > a:visited {
     width: 15%;
     height: 30px;
     float: left;
+    font-size: 14px;
     padding-top: 12px;
 }
 
@@ -126,22 +129,27 @@ nav > ul > li > a:visited {
     height: 30px;
     float: left;
     padding-top: 12px;
-    font-size: 20px;
-    color: rgb(235, 2, 2);
+    font-size: 14px;
+    font-family:Verdana, Tahoma, sans-serif;
+    font-weight: 700;
+    color: rgb(159, 26, 26);
 }
 #movie-child5_ {
     width: 15%;
     height: 30px;
     float: left;
     padding-top: 12px;
-    font-size: 20px;
-    color: rgb(227, 171, 171);
+    font-size: 14px;
+    font-family:Verdana, Tahoma, sans-serif;
+    font-weight: 600;
+    color: rgb(157, 123, 123);
 }
 
 #movie-child6 {
     width: 15%;
     height: 30px;
     float: left;
+    font-size: 14px;
     padding-top: 12px;
 }
 
@@ -149,9 +157,9 @@ nav > ul > li > a:visited {
     width: 15%;
     height: 30px;
     float: left;
+    font-size: 14px;
     padding-top: 12px;
 }
-
 
 
 .container-add {
@@ -161,7 +169,7 @@ nav > ul > li > a:visited {
     color: white;
     background-color: rgb(236, 221, 221);
     margin: auto;
-    height: 500px;
+    height: 250px;
     width: 50%;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -171,22 +179,38 @@ nav > ul > li > a:visited {
     margin: 15px 0px 0px 15px;
 }
 
-#form-add > input{
+#form-add > input, select{
     padding-left: 8px;
+    border-color: maroon;
     border-radius: 5px;
+    border-width: 1px;
     height: 30px;
     width: 300px;
     margin: 0px 10px 10px 0px;
 }
 
-#director{
+#form-add > input:focus, select:focus { 
+        outline: none;
+        border-color: maroon;
+        box-shadow: 0 0 10px maroon;
+}
+
+#director, title{
     padding-left: 8px;
     border-radius: 5px;
     height: 36px;
-    width: 300px;
+    width: 282px;
     margin: 0px 10px 10px 0px;
 }
 
+#genre {
+    padding-left: 8px;
+    border-radius: 5px;
+    height: 36px;
+    width:230px;
+    margin: 0px 10px 10px 0px;
+
+}
 #year {
     padding-left: 8px;
     border-radius: 5px;
@@ -199,6 +223,6 @@ nav > ul > li > a:visited {
     padding-left: 8px;
     border-radius: 5px;
     height: 36px;
-    width: 220px;
+    width: 230px;
     margin: 0px 10px 10px 0px;
 }

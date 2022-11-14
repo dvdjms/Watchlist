@@ -1,16 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
-   
-    
-        <section>
+    <header class="header">
+        
+        <h1 class="header-title">Movies</h1>
+
+    </header>
+    <div class="container-movie">
+        <section class="container-movie1">
             <h3>{{ movie.title }}</h3>
-            <h4>{{ movie.director }}</h4>
+            <h4>{{ movie.director.name }}</h4>
             <h4>{{ movie.genre }}</h4>
             <h4>{{ movie.year }}</h4>
+            <h4>{{ movie.country }}</h4>
+         
+            <h4>{{ movie.watchlist }}</h4>
+
+        </section>
+        <section>
+            
             <h4>{{ movie.rating }}</h4>
         </section>
 
+        <div>
+            <form action="/movies/{{ movie.id }}/edit" method="POST">
+                <input type="submit" value="Edit">
+            </form>
+        </div>
     </div>
 {% endblock %}
 

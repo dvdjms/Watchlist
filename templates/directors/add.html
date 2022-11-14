@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <header class="header">
+        <h1 class="header-title">Create New</h1>
+    </header>
+    <div><button><a href="/movies/add">Add new movie</a></button></div><br>
+
+    <div class="container-add">
+        <form action="/directors/add" method="post" id="form-add" name="director-form">
+            <label for="director"></label> 
+            <input autofocus id="director" name="name" type="text" placeholder="Name"><br>
+            <label for="nationality"></label> 
+            <input id="nationality" name="nationality" type="text" placeholder="Nationality"><br>
+            <input type="submit">
+        </form>
+
+    </div>
+
+
+{% endblock %}

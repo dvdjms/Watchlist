@@ -4,6 +4,7 @@ import repositories.movie_repository as movie_repository
 from models.movie import Movie
 import repositories.director_repository as director_repository
 from models.director import Director
+import pdb
 
 movies_blueprint = Blueprint("movies", __name__)
 
@@ -48,10 +49,47 @@ def add_movie():
         # Get director's information from director id
         directors = director_repository.select(directorid)
         # Save to variable
-        movie = Movie(title, directors, genre, year, country, rating, watchlist, directors)
+        movie = Movie(title, genre, year, country, directors, rating, watchlist)
         # Save new movie entry
         movie_repository.save(movie)
         return redirect('/movies')
+
+
+# DELETE MOVIE
+@movies_blueprint.route("/movies/<id>/delete", methods=['POST'])
+def delete_movie(id):
+    movie_repository.delete_id(id)
+    return redirect("/movies")
+
+
+# UPDATE WATCHLIST
+@movies_blueprint.route("/movies/<id>/watch_status", methods=['POST'])
+def update_watch1(id):
+    movie_repository.update_watchlist(id)
+    return redirect("/movies")
+
+# UPDATE WATCHLIST
+@movies_blueprint.route("/watchlist/<id>/watch_status", methods=['POST'])
+def update_watch2(id):
+    movie_repository.update_watchlist(id)
+    return redirect("/watchlist")
+
+
+
+
+# EDIT MOVIE
+@movies_blueprint.route("/movies/<id>/edit", methods=['GET', 'POST'])
+def edit_movie(id):
+    
+ 
+    directors = director_repository.select_all()
+    movie = movie_repository.select(id)
+    for director in directors:
+        if director.id == movie.director.id:
+            name = director.name
+
+    return render_template("movies/edit.html", movie=movie, directors=directors, name=name)
+
 
 
 

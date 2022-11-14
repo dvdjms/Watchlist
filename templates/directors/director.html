@@ -5,39 +5,12 @@
     <h1 class="header-title">Directors</h1>
 
 </header>
-    <div>
-        {% for movie in movies %}
-        <div class="container-movie">
-            <section class="container-movie1">
-                <div class="movie-child1"><a href="/movies/{{ movie.id }}">{{ movie.title }}</a></div>
-                <!-- issues with getting director id -->
-                <div class="movie-child1">Directed by: <a href="/directors/{{ movie.id }}">{{ movie.director }}</a></div>
-            </section>
-            <section class="container-movie2">
-                <div id="movie-child3">Year: {{ movie.year }}</div>
-                <div id="movie-child4">Rating: {{ movie.rating }}</div>
-                {% if movie.watchlist == True %} 
-                <div id="movie-child5">Watchlist</div>
-                {% else %}
-                <div id="movie-child5_">Seen</div> 
-                {% endif %}
-                <div id="movie-child6"><a href="/movies/{{ movie.id }}">View</a></div>
-                <div id="movie-child7">
-                    <form action="/movies/{{ movie.id }}/movie" method="POST" onsubmit="return confirm('Are you sure you wish to delete?');">
-                        <input type="submit" value="Delete">
-                    </form>
-                </div>
-            </section>
-        </div>
-        {% endfor %}
+    <div class="container-movie">
+        <section class="container-movie1">
+            <h3>{{ director.name }}</h3><br><br>
+            <h3>{{ director.nationality }}</h3>
+        </section>
     </div>
-
-    <section>
-        <h3>{{ director.name }}</h3>
-        <h4>{{ director.id }}</h4>
-
-    </section>
-
 
 {% endblock %}
 

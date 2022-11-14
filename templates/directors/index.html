@@ -1,53 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<header class="header">
-    
-    <h1 class="header-title">Directors</h1>
+    <header class="header">
+        <h1 class="header-title">Directors</h1>
+    </header>
 
-</header>
-{% for movie in movies %}
-<div class="container-movie">
-    <section class="container-movie1">
-        <div class="movie-child1"><a href="/movies/{{ movie.id }}">{{ movie.title }}</a></div>
-        <!-- issues with getting director id -->
-        <div class="movie-child1">Directed by: <a href="/directors/{{ movie.id }}">{{ movie.director }}</a></div>
-    </section>
-    <section class="container-movie2">
-        <div id="movie-child3">Year: {{ movie.year }}</div>
-        <div id="movie-child4">Rating: {{ movie.rating }}</div>
-        {% if movie.watchlist == True %} 
-        <div id="movie-child5">Watchlist</div>
-        {% else %}
-        <div id="movie-child5_">Seen</div> 
-        {% endif %}
-        <div id="movie-child6"><a href="/movies/{{ movie.id }}">View</a></div>
-        <div id="movie-child7">
-            <form action="/movies/{{ movie.id }}/movie" method="POST" onsubmit="return confirm('Are you sure you wish to delete?');">
-                <input type="submit" value="Delete">
-            </form>
+        {% for director in directors | reverse %}
+        <div class="container-movie">
+            <section class="container-movie1">
+                <h3>{{ director.name}}</h3>
+                <h3>{{ director.nationality }}</h3>
+            </section>
+            <section class="container-movie2">
+                <a href="/directors/{{ director.id }}">View</a>
+                <form action="/directors/{{ director.id }}/delete" method="POST" onsubmit="return confirm('This will delete director entry and all their movies. Are you sure you wish to delete?')">
+                    <input type="submit" value="Delete">
+                </form>
+            </section>
         </div>
-    </section>
-</div>
-{% endfor %}
-    <div>
-
-
-        {% for director in directors %}
-        <section>
-            <h3>{{ director.name}}</h3>
-            <h3>{{ director.id}}</h3>
-
-        </section>
-
-        <a href="/directors/{{ director.id }}">View</a>
-        <form action="/movies/{{ director.id }}/director" method="POST">
-            <input type="submit" value="Delete">
-        </form>
-        <a href="/directors/{{ director.id }}">Details</a>
-
         {% endfor %}
-    
-    </div>
+
 {% endblock %}
 
 

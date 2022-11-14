@@ -12,13 +12,13 @@ CREATE TABLE users (
 
 CREATE TABLE directors (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
+    name VARCHAR(255),
+    nationality VARCHAR(255)
 );
 
 CREATE TABLE movies (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    director VARCHAR(255) NOT NULL,
     genre VARCHAR(255) NOT NULL,
     year INT NOT NULL,
     country VARCHAR(255) NOT NULL,
@@ -27,9 +27,5 @@ CREATE TABLE movies (
     director_id INT NOT NULL REFERENCES directors(id) ON DELETE CASCADE
 );
 
--- CREATE TABLE watchlist (
---     id SERIAL PRIMARY KEY,
---     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
---     movie_id INT NOT NULL REFERENCES movies(id) ON DELETE CASCADE
--- );
+
 
