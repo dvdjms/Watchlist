@@ -48,3 +48,22 @@ def delete_director(id):
     director_repository.delete_id(id)
     return redirect("/directors")
 
+
+# EDIT DIRECTOR - LOAD WITH DIRECTOR DETAILS
+@directors_blueprint.route("/directors/<id>/edit", methods=['POST'])
+def edit_director(id):
+    director = director_repository.select(id)
+    return render_template("directors/edit.html", director=director)
+
+
+# EDIT MOVIE - UPDATE BUTTON
+@directors_blueprint.route("/directors/<id>", methods=['POST'])
+def edit_director_update(id):
+    name = request.form['name']
+    nationality = request.form['nationality']
+    director = Director(name, nationality, id)
+    director_repository.update_director(director)
+    return redirect('/directors')
+
+
+

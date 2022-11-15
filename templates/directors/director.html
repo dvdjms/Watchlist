@@ -6,11 +6,19 @@
 
 </header>
     <div class="container-movie">
+     
         <section class="container-movie1">
             <h3>{{ director.name }}</h3><br><br>
             <h3>{{ director.nationality }}</h3>
         </section>
+   
+        <div>
+            <form action="/directors/{{ director.id }}/edit" method="POST">
+                <button type="submit" value="{{ director.id }}">Edit</button>
+            </form>
+        </div>
     </div>
+</div>
 
 {% endblock %}
 

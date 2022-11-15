@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <header class="header">
+        <h1 class="header-title">Edit Director</h1>
+    </header>
+    
+    <div class="container-add">
+
+        <form action="/directors/{{ director.id }}" method="post" id="form-add" name="director-form">
+            <label for="director"></label> 
+            <input autofocus id="director" name="name" type="text" placeholder="Name" value="{{ director.name }}"><br>
+            <label for="nationality"></label> 
+            <input id="nationality" name="nationality" type="text" placeholder="Nationality" value="{{ director.nationality }}"><br>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+
+{% endblock %}

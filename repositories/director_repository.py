@@ -39,3 +39,9 @@ def delete_id(id):
     sql = "DELETE FROM directors WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+def update_director(director):
+    sql = "UPDATE directors SET (name, nationality) = (%s, %s) WHERE id = (%s) RETURNING *"
+    values = [director.name, director.nationality, director.id]
+    run_sql(sql, values) 
