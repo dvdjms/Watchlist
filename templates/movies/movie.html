@@ -12,18 +12,16 @@
             <h4>{{ movie.genre }}</h4>
             <h4>{{ movie.year }}</h4>
             <h4>{{ movie.country }}</h4>
-         
             <h4>{{ movie.watchlist }}</h4>
 
         </section>
         <section>
-            
             <h4>{{ movie.rating }}</h4>
         </section>
 
         <div>
             <form action="/movies/{{ movie.id }}/edit" method="POST">
-                <input type="submit" value="Edit">
+                <button type="submit" value="{{ movie.id }}">Edit</button>
             </form>
         </div>
     </div>

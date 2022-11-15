@@ -21,7 +21,7 @@
 
             <label for="director"></label> 
             <select autofocus id="director" name="director" type="dropdown">
-                <option selected="true" disabled="disabled">Director</option>
+                <option selected="true" disabled="disabled">{{ name }}</option>
                 {% for director in directors %}
                 <option value="{{ director.id }}">{{ director.name }}</option>
                 {% endfor %}
@@ -36,6 +36,7 @@
                 <option value="action">Action</option>
                 <option value="comedy">Comedy</option>
                 <option value="crime">Crime</option>
+                <option value="drama">Drama</option>
                 <option value="fantasy">Fantasy</option>
                 <option value="horror">Horror</option>
                 <option value="mystery">Mystery</option>

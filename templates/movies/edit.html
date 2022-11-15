@@ -3,14 +3,13 @@
     <header class="header">
         <h1 class="header-title">Edit Movie</h1>
     </header>
-    <div><button><a href="/directors/add">Add new director</a></button></div><br>
-
+    
     <div class="container-add">
-        <form action="/movies/add" method="post" id="form-add" name="movie-form">
+        <form action="/movies/{{ movie.id }}" method="post" id="form-add" name="movie-form">
 
-            <label for="director"></label> 
+            <label for="director"></label>
             <select autofocus id="director" name="director" type="dropdown">
-                <option selected="true">{{ name }}</option>
+                <option selected="true" value="{{ id }}">{{ name }}</option>
                 {% for director in directors %}
                 <option value="{{ director.id }}">{{ director.name }}</option>
                 {% endfor %}
@@ -21,10 +20,11 @@
 
             <label for="genre"></label> 
             <select id="genre" name="genre">
-                <option selected="true" disabled="disabled">{{ movie.genre }}</option>
+                <option selected="true">{{ movie.genre }}</option>
                 <option value="action">Action</option>
                 <option value="comedy">Comedy</option>
                 <option value="crime">Crime</option>
+                <option value="drama">Drama</option>
                 <option value="fantasy">Fantasy</option>
                 <option value="horror">Horror</option>
                 <option value="mystery">Mystery</option>
@@ -35,7 +35,7 @@
 
             <label for="year"></label> 
             <select id="year" name="year">
-                <option selected="true" disabled="disabled">{{ movie.year }}</option>
+                <option selected="true">{{ movie.year }}</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
                 <option value="2020">2020</option>
@@ -173,7 +173,7 @@
             <!-- Country dropdown source: https://gist.github.com/danrovito/977bcb97c9c2dfd3398a -->
             <label for="country"></label>     
             <select id="country" name="country" class="form-control">
-                <option selected="true" disabled="disabled">{{ movie.country }}</option>
+                <option selected="true">{{ movie.country }}</option>
                 <option value="United States">United States</option>
                 <option value="United Kingdom">United Kingdom</option>
                 <option value="Afghanistan">Afghanistan</option>

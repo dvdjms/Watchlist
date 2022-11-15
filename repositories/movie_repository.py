@@ -59,12 +59,8 @@ def delete_id(id):
     run_sql(sql, values)
 
 
-
 def update_watchlist(id):
     movie = select(id)
-
-    print(movie.title)
-    print(movie.watchlist)
 
     if movie.watchlist == True:
         sql = "UPDATE movies SET watchlist = (%s) WHERE id = (%s)"
@@ -74,3 +70,12 @@ def update_watchlist(id):
         sql = "UPDATE movies SET watchlist = (%s) WHERE id = (%s)"
         values = [True, id]
         run_sql(sql, values)
+
+
+def update_movie(movie):
+    sql = "UPDATE movies SET (title, genre, year, country, director_id) = (%s, %s, %s, %s, %s) WHERE id = (%s) RETURNING *"
+    values = [movie.title, movie.genre, movie.year, movie.country, movie.director.id, movie.id]
+    run_sql(sql, values) 
+
+  
+
