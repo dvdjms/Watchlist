@@ -22,7 +22,7 @@ def view_director(id):
     return render_template("directors/director.html", director=director)
 
 
-# ADD MOVIE
+# ADD DIRECTOR
 @directors_blueprint.route("/directors/add", methods=['GET', 'POST'])
 def add_director():
 
@@ -31,6 +31,15 @@ def add_director():
         return render_template("directors/add.html", directors=directors)
 
     if request.method == 'POST':
+
+        # Error checking
+        directors = director_repository.select_all()
+        if request.form['name'] == "":
+            return render_template("directors/add.html", directors=directors, message="Enter name")
+        if request.form['nationality'] == "":
+            return render_template("directors/add.html", directors=directors, message="Enter nationality")
+
+
         # Get information posted by user
         name = request.form['name']
         nationality = request.form['nationality']

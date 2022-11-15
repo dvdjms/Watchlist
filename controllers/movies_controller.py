@@ -38,6 +38,20 @@ def add_movie():
         return render_template("movies/add.html", directors=directors)
 
     if request.method == 'POST':
+
+        # Error checking
+        directors = director_repository.select_all()
+        if request.form['director'] == 'Director':
+            return render_template("movies/add.html", directors=directors, message="Enter director")
+        if request.form['title'] == "":
+            return render_template("movies/add.html", directors=directors, message="Enter Title")
+        if request.form['genre'] == 'Genre':
+            return render_template("movies/add.html", directors=directors, message="Enter Genre")
+        if request.form['year'] == 'Year':
+            return render_template("movies/add.html", directors=directors, message="Enter Year")
+        if request.form['country'] == 'Country':
+            return render_template("movies/add.html", directors=directors, message="Enter Country")
+
         # Get information posted by user
         directorid = request.form['director']
         print(directorid)

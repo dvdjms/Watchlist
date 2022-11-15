@@ -18,10 +18,9 @@
     
     <div class="container-add">
         <form action="/movies/add" method="post" id="form-add" name="movie-form">
-
             <label for="director"></label> 
             <select autofocus id="director" name="director" type="dropdown">
-                <option selected="true" disabled="disabled">{{ name }}</option>
+                <option selected="true">Director</option>
                 {% for director in directors %}
                 <option value="{{ director.id }}">{{ director.name }}</option>
                 {% endfor %}
@@ -31,8 +30,8 @@
             <input id="title" name="title" type="text" placeholder="Title"><br>
 
             <label for="genre"></label> 
-            <select id="genre" name="genre">
-                <option selected="true" disabled="disabled">Genre</option>
+            <select id="genre" name="genre" type="dropdown">
+                <option selected="true">Genre</option>
                 <option value="action">Action</option>
                 <option value="comedy">Comedy</option>
                 <option value="crime">Crime</option>
@@ -46,8 +45,8 @@
             </select>
 
             <label for="year"></label> 
-            <select id="year" name="year">
-                <option selected="true" disabled="disabled">Year</option>
+            <select id="year" name="year" value="year">
+                <option selected="true">Year</option>
                 <option value="2022">2022</option>
                 <option value="2021">2021</option>
                 <option value="2020">2020</option>
@@ -184,8 +183,8 @@
             <label></label>
             <!-- Country dropdown source: https://gist.github.com/danrovito/977bcb97c9c2dfd3398a -->
             <label for="country"></label>     
-            <select id="country" name="country" class="form-control">
-                <option selected="true" disabled="disabled">Country</option>
+            <select id="country" name="country" class="form-control" type="dropdown">
+                <option selected="true">Country</option>
                 <option value="United States">United States</option>
                 <option value="United Kingdom">United Kingdom</option>
                 <option value="Afghanistan">Afghanistan</option>
@@ -437,6 +436,7 @@
             <label></label>
             <input type="submit">
         </form>
+        <h2>{{ message }}</h2>
 
     </div>
 
