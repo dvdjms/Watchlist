@@ -19,7 +19,7 @@
             <form action="/movies/{{ movie.id }}/rating" method="post">
                 <select id="rating" name="rating">
                     <label for="rating">Rating:</label>
-                    <option selected="true" disabled="disabled">{{ movie.rating }}</option>
+                    <option selected="true">{{ movie.rating }}</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
