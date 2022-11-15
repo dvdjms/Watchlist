@@ -79,3 +79,9 @@ def update_movie(movie):
 
   
 
+def update_rating(movie):
+
+    sql = "UPDATE movies SET rating = (%s) WHERE id = (%s)"
+
+    values = [movie.rating, movie.id]
+    run_sql(sql, values)

@@ -90,16 +90,26 @@ def edit_movie(id):
 
 
 # EDIT MOVIE - UPDATE BUTTON
-@movies_blueprint.route("/movies/<id>", methods=['POST'])
+@movies_blueprint.route("/movies/<id>/update", methods=['POST'])
 def edit_movie_update(id):
-    director1 = request.form['director']
+    directorid = request.form['director']
     title = request.form['title']
     genre = request.form['genre']
     year = request.form['year']
     country = request.form['country']
-    director = director_repository.select(director1)
+    director = director_repository.select(directorid)
     movie = Movie(title, genre, year, country, director, id=id)
     movie_repository.update_movie(movie)
+    return redirect('/movies')
+
+
+# UPDATE MOVIE RATING
+@movies_blueprint.route("/movies/<id>/rating", methods=['POST'])
+def update_movie_rating(id):
+    rating = request.form['rating']
+    movie_ = movie_repository.select(id)
+    movie = Movie(movie_.title, movie_.genre, movie_.year, movie_.country, movie_.director, rating, id=id)
+    movie_repository.update_rating(movie)
     return redirect('/movies')
 
 

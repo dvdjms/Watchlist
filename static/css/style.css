@@ -226,3 +226,12 @@ nav > ul > li > a:visited {
     width: 230px;
     margin: 0px 10px 10px 0px;
 }
+
+#rating {
+    float: right;
+    width: 50px;
+}
+
+#rating-section {
+    float: right;
+}
