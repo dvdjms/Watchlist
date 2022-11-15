@@ -2,13 +2,13 @@
 {% block content %}
 <header class="header">
     
-    <h1 class="header-title">Home</h1>
+    <h1 class="header-title">Movie Home</h1>
 
 </header>
 
-<h1>Movie Home Page</h1>
-
-<h2>Movies from the eighties</h2>
-
+    <div id="homepage-div">
+        <!-- image source: https://searchengineland.com/google-launches-critic-reviews-for-movies-tv-others-to-come-later-this-year-226940-->
+        <img id="homepageimage" src="{{ url_for('static', filename='images/movie1.jpg') }}" alt="clapper board and movie camera">
+    </div>
 
 {% endblock %}

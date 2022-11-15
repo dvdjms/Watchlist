@@ -5,7 +5,7 @@
         <h1 class="header-title">Movies</h1>
 
     </header><br>
-
+    <div><button><a href="/movies/add">Add new movie</a></button></div><br>
         {% for movie in movies | reverse %}
         <div class="container-movie">
             <section class="container-movie1">
@@ -44,6 +44,7 @@
                 </div>
             </section>
         </div>
+
         {% endfor %}
 {% endblock %}
 

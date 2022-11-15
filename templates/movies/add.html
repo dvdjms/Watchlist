@@ -4,17 +4,6 @@
         <h1 class="header-title">Add New Movie</h1>
     </header>
     <div><button><a href="/directors/add">Add new director</a></button></div><br>
-
-    <div class="container-add">
-        <form action="/directors/add" method="post" id="form-add" name="director-form">
-            <label for="director"></label> 
-            <input autofocus id="director" name="name" type="text" placeholder="Name"><br>
-            <label for="nationality"></label> 
-            <input id="nationality" name="nationality" type="text" placeholder="Nationality"><br>
-            <input type="submit">
-        </form>
-
-    </div>
     
     <div class="container-add">
         <form action="/movies/add" method="post" id="form-add" name="movie-form">
@@ -437,8 +426,9 @@
             <input type="submit">
         </form>
         <h2>{{ message }}</h2>
-
+   
     </div>
+  
 
 
 {% endblock %}

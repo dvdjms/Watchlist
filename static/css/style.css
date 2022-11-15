@@ -235,3 +235,22 @@ nav > ul > li > a:visited {
 #rating-section {
     float: right;
 }
+
+#homepage-div {
+    margin: auto;
+    height: 20%;
+    width: 54%;
+    margin: auto;
+}
+
+#homepageimage {
+    height: 100%;
+    width: 100%;
+    border-color: maroon;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+
+
