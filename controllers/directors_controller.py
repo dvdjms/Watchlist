@@ -39,7 +39,6 @@ def add_director():
         if request.form['nationality'] == "":
             return render_template("directors/add.html", directors=directors, message="Enter nationality")
 
-
         # Get information posted by user
         name = request.form['name']
         nationality = request.form['nationality']
@@ -68,6 +67,12 @@ def edit_director(id):
 # EDIT MOVIE - UPDATE BUTTON
 @directors_blueprint.route("/directors/<id>", methods=['POST'])
 def edit_director_update(id):
+    director = director_repository.select(id)
+    if request.form['name'] == "":
+        return render_template("directors/edit.html", director=director, message="Enter name")
+    if request.form['nationality'] == "":
+        return render_template("directors/edit.html", director=director, message="Enter nationality")
+
     name = request.form['name']
     nationality = request.form['nationality']
     director = Director(name, nationality, id)
