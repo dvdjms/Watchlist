@@ -17,7 +17,6 @@ def directors():
 # VIEW DIRECTOR
 @directors_blueprint.route("/directors/<id>")
 def view_director(id):
-    print(id)
     director = director_repository.select(id)
     return render_template("directors/director.html", director=director)
 

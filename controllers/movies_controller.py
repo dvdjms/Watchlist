@@ -52,13 +52,13 @@ def add_movie():
         if request.form['director'] == 'Director':
             return render_template("movies/add.html", directors=directors, message="Enter director")
         if request.form['title'] == "":
-            return render_template("movies/add.html", directors=directors, message="Enter Title")
+            return render_template("movies/add.html", directors=directors, message="Enter title")
         if request.form['genre'] == 'Genre':
-            return render_template("movies/add.html", directors=directors, message="Enter Genre")
+            return render_template("movies/add.html", directors=directors, message="Enter genre")
         if request.form['year'] == 'Year':
-            return render_template("movies/add.html", directors=directors, message="Enter Year")
+            return render_template("movies/add.html", directors=directors, message="Enter year")
         if request.form['country'] == 'Country':
-            return render_template("movies/add.html", directors=directors, message="Enter Country")
+            return render_template("movies/add.html", directors=directors, message="Enter country")
 
         # Get information posted by user
         directorid = request.form['director']

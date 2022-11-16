@@ -3,17 +3,23 @@
     <header class="header">
         <h1 class="header-title">Directors</h1>
     </header>
-    <div><button><a href="/directors/add">Add new director</a></button></div><br>
+    <div class="director_button">
+        <button><a href="/directors/add">Add new director</a></button>
+    </div><br>
         {% for director in directors | reverse %}
-        <div class="container-movie">
-            <section class="container-movie1">
+        <div class="container-director">
+            <section class="container-director1">
                 <h3>{{ director.name}}</h3>
+            </section>
+            <section class="container-director2">
                 <h3>{{ director.nationality }}</h3>
             </section>
-            <section class="container-movie2">
-                <a href="/directors/{{ director.id }}">View</a>
+            <section class="container-director3">
+                <button class="button-director"><a href="/directors/{{ director.id }}">View director</a></button>
+            </section>
+            <section class="container-director4">
                 <form action="/directors/{{ director.id }}/delete" method="POST" onsubmit="return confirm('This will delete director entry and all their movies. Are you sure you wish to delete?')">
-                    <input type="submit" value="Delete">
+                    <button class="button-director" type="submit">Delete director</button>
                 </form>
             </section>
         </div>

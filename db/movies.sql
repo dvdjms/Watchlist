@@ -1,14 +1,7 @@
 -- DROP TABLE IF EXISTS watchlist;
 DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS directors;
 
-
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255)
-);
 
 CREATE TABLE directors (
     id SERIAL PRIMARY KEY,

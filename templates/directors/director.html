@@ -5,21 +5,27 @@
     <h1 class="header-title">Directors</h1>
 
 </header>
-    <div class="container-movie">
-     
-        <section class="container-movie1">
-            <h3>{{ director.name }}</h3><br><br>
+    <div class="director_button">
+        <button><a href="/directors">Back to all directors</a></button>
+    </div><br>
+
+    <div class="container-director">
+        <section class="container-director1">
+            <h3>{{ director.name}}</h3>
+        </section>
+        <section class="container-director2">
             <h3>{{ director.nationality }}</h3>
         </section>
-   
-        <div>
+  
+        <section class="container-director3">
             <form action="/directors/{{ director.id }}/edit" method="POST">
-                <button type="submit" value="{{ director.id }}">Edit</button>
+                <button class="button-director" type="submit" value="{{ director.id }}">Edit director</button>
             </form>
-        </div>
+        </section>
     </div>
-</div>
+
+
+
 
 {% endblock %}
-
 

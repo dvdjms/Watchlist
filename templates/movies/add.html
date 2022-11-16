@@ -3,7 +3,10 @@
     <header class="header">
         <h1 class="header-title">Add New Movie</h1>
     </header>
-    <div><button><a href="/directors/add">Add new director</a></button></div><br>
+
+    <div class="director_button1">
+        <button><a href="/directors/add">Add new director</a></button>
+    </div><br>
     
     <div class="container-add">
         <form action="/movies/add" method="post" id="form-add" name="movie-form">
@@ -423,9 +426,11 @@
             </select><br>
 
             <label></label>
-            <input type="submit">
+            <input id="submit_new" type="submit">
         </form>
-        <h2>{{ message }}</h2>
+        <div class="error-message">
+            <h2>{{ message }}</h2>
+        </div>
    
     </div>
   
