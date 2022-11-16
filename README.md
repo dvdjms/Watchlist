@@ -25,18 +25,24 @@ After 4 weeks at CodeClan we undertook our first project. Working independently 
 
 ### MVP
 <br>
-<p>A user should be able to...</p>
-<p>The app should allow the  user to track directors and movies they want to watch and those they have watched.
-<p>The user should be able to create and edit directors.</p>
-<p>Each director should have one or more movies to watch.</p>
-<p>The user should be able to create and delete entries for movies.</p>
-<p>The app should allow the user to mark movies as watched or still to see.</p><br>
+A user should be able to...</p>
+<ul>
+    <li>The app should allow the  user to track directors and movies they want to watch and those they have watched.</li>
+    <li>The user should be able to create and edit directors.</li>
+    <li>Each director should have one or more movies to watch.</li>
+    <li>The user should be able to create and delete entries for movies.</li>
+    <li>The app should allow the user to mark movies as watched or still to see.</li>
+</uL>
+<br>
+
 
 ### Extensions:
-<p>Have separate pages for all movies and movies on the watchlist.</p>
-<p>Have individual pages for directors and movies.</p>
-<p>Have user rating option.</p>
-<p>The user can write reviews for movies.</p>
+<ul>
+    <li>Have separate pages for all movies and movies on the watchlist.</li>
+    <li>Have individual pages for directors and movies.</li>
+    <li>Have user rating option.</li>
+    <li>The user can write reviews for movies.</li>
+</ul>
 <br>
 
 I may or may not develop this app any further. Purely to keep a record of my progress during my coding journey. This is the result of 4 weeks with CodeClan.
