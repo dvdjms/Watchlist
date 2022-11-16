@@ -4,7 +4,6 @@ from controllers.movies_controller import movies_blueprint
 from controllers.directors_controller import directors_blueprint
 
 
-
 app = Flask(__name__)
 
 app.register_blueprint(movies_blueprint)

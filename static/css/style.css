@@ -394,7 +394,7 @@ nav > ul > li > a:visited {
     cursor: pointer;
 }
 
-.watchlist_button {
+.watchlist_button, .watchlist_button_ {
     cursor: pointer;
     color: maroon;
     border-radius: 5px;
@@ -419,6 +419,13 @@ nav > ul > li > a:visited {
 }
 .watchlist_button:hover:after {
     content: 'Remove';
+}
+
+.watchlist_button_:after {
+    content: 'Seen';
+}
+.watchlist_button_:hover:after {
+    content: 'Add to Watchlist';
 }
 
 #movie-child5 > button {

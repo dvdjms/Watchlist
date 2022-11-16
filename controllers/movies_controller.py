@@ -3,8 +3,7 @@ from flask import Blueprint, Flask, redirect, render_template, request
 import repositories.movie_repository as movie_repository
 from models.movie import Movie
 import repositories.director_repository as director_repository
-from models.director import Director
-import pdb
+
 
 movies_blueprint = Blueprint("movies", __name__)
 
@@ -24,16 +23,12 @@ def view_movie(id):
     return render_template("movies/movie.html", movie=movie)
 
 
-
-##################################################################
 # VIEW WATCHLIST
 @movies_blueprint.route("/watchlist")
 def view_movie_watchlist():
     # Call select
     movies = movie_repository.select_watchlist()
     return render_template("watchlist/index.html", movies=movies)
-
-##################################################################
 
 
 # ADD MOVIE

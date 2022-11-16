@@ -34,11 +34,11 @@
                 {% else %}
                 <div id="movie-child5">
                     <form action="/movies/{{ movie.id }}/watch_status" method="POST">
-                        <button class="button_" type="submit">Add to Watchlist</button>
+                        <button class="watchlist_button_" type="submit"></button>
                     </form>
                 </div>
-
                 {% endif %}
+
                 <div id="movie-child6"><button class="button_"><a href="/movies/{{ movie.id }}">View movie</a></button></div>
                 <div id="movie-child7">
                     <form action="/movies/{{ movie.id }}/delete" method="POST" onsubmit="return confirm('Are you sure you wish to delete?')">

@@ -1,9 +1,7 @@
 from db.run_sql import run_sql
 from models.movie import Movie
-from models.director import Director
-import repositories.movie_repository as movie_repository
 import repositories.director_repository as director_repository
-# import repositories.user_repository as user_repository
+
 
 def save(movie):
     sql = "INSERT INTO movies (title, genre, year, country, rating, watchlist, director_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
@@ -61,7 +59,6 @@ def delete_id(id):
 
 def update_watchlist(id):
     movie = select(id)
-
     if movie.watchlist == True:
         sql = "UPDATE movies SET watchlist = (%s) WHERE id = (%s)"
         values = [False, id]
@@ -78,10 +75,7 @@ def update_movie(movie):
     run_sql(sql, values) 
 
   
-
 def update_rating(movie):
-
     sql = "UPDATE movies SET rating = (%s) WHERE id = (%s)"
-
     values = [movie.rating, movie.id]
     run_sql(sql, values)
