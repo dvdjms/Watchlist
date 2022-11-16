@@ -1,8 +1,5 @@
 import pdb
 
-from models.user import User
-import repositories.user_repository as user_repository
-
 from models.movie import Movie
 import repositories.movie_repository as movie_repository
 
@@ -10,22 +7,9 @@ from models.director import Director
 import repositories.director_repository as director_repository
 
 
-user_repository.delete_all()
 movie_repository.delete_all()
 director_repository.delete_all()
 
-
-user_1 = User("John", "Johnson")
-user_repository.save(user_1)
-
-user_2 = User("Sam", "Samson")
-user_repository.save(user_2)
-
-user_3 = User("Robert", "Robertson")
-user_repository.save(user_3)
-
-user_4 = User("Eric", "Ericson")
-user_repository.save(user_4)
 
 director_1 = Director("Martin Scorsese", "United States")
 director_repository.save(director_1)

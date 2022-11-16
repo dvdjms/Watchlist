@@ -27,21 +27,21 @@
                 {% if movie.watchlist == True %}
                 <div id="movie-child5">
                     <form action="/watchlist/{{ movie.id }}/watch_status" method="POST">
-                        <input class="watchlist_button" type="submit" value="In Watchlist">
+                        <button class="watchlist_button" type="submit"></button>
                     </form>
                 </div>
                 {% else %}
                 <div id="movie-child5">
                     <form action="/watchlist/{{ movie.id }}/watch_status" method="POST">
-                        <input type="submit">
+                        <button class="button_" type="submit">Add to Watchlist</button>
                     </form>
                 </div>
                 {% endif %}
 
-                <div id="movie-child6"><button><a href="/movies/{{ movie.id }}">View movie</a></button></div>
+                <div id="movie-child6"><button class="button_"><a href="/movies/{{ movie.id }}">View movie</a></button></div>
                 <div id="movie-child7">
                     <form action="/movies/{{ movie.id }}/delete" method="POST" onsubmit="return confirm('Are you sure you wish to delete?');">
-                        <input type="submit" value="Delete movie">
+                        <input class="button_" type="submit" value="Delete movie">
                     </form>
                 </div>
             </section>

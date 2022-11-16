@@ -1,16 +1,22 @@
-# watchlist
+# Movie Watchlist
 
 ## Brief <br>
-<P>Movie watchlist – adapted from Travel Bucket List.</P>
-<P>The users will be able to create and edit entries for directors.</P>
-<P>Each director will have many movies.</P>
-<P>The user will be able to create and delete entries for movies.</P>
-<P>The app will allow the user to add a movie to a watchlist or remove a movie from a watchlist.</P><br>
-<p>This app is designed for cinephiles to help keep track of movies from directors they want to see and have seen.</P><br>
+
+<p>Adapted from the Country Bucket List</p>
+<p>The app should allow the  user to track directors and movies they want to watch and those they have watched.</p>
+<p>The user should be able to create and edit directors.</p>
+<p>Each director should have one or more movies to watch.</p>
+<p>The user should be able to create and delete entries for movies.</p>
+<p>The app should allow the user to mark movies as watched or still to see.</p><br>
 
 ### Possible Extension:
-<p>The user can rate movies.</P>
-<p>The user can write reviews for movies.</P>
+<p>Have separate pages for all movies and movies on the watchlist.</p>
+<p>Have individual pages for directors and movies</p>
+<p>Have user rating option.</p>
+<p>The user can write reviews for movies.</p><br>
+
+
+
 
 
 A few diagrams to get started. WIP.
