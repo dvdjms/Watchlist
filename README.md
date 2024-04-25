@@ -63,7 +63,7 @@ python3 console.py
 ```
 Then to run the app:
 ```
-flask run
+flask run or python3 -m flask run
 ```
 
 <br>
